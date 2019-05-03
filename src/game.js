@@ -5,8 +5,7 @@ import Scene from "./scene";
 import ControlState from "./control_state";
 import GameLevel from "./scenes/game_level";
 
-export default class Game {
-    // деструктуризаційне присвоєння
+class Game {
     constructor({ width = 900, height = 900 } = {}) {
         this.gameWindow = new GameWindow(width, height);
         this.gameWindow.loadImages({
@@ -41,10 +40,12 @@ export default class Game {
             this.currentScene.init();
         }
         this.currentScene.render(time);
-        requestAnimationFrame(time => this.frame(time));
+        requestAnimationFrame(this.frame.bind(this));
     }
 
     run() {
-        requestAnimationFrame(time => this.frame(time));
+        requestAnimationFrame(this.frame.bind(this));
     }
 }
+
+export default Game

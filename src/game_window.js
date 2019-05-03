@@ -12,8 +12,6 @@ function GameWindow(width, height) {
     const context = canvas.getContext('2d');
     let images = {};
 
-    const self = this;
-
     function createCanvas(width, height) {
         let elements = document.getElementsByTagName("canvas");
         let canvas = elements[0] || document.createElement('canvas');
@@ -30,15 +28,14 @@ function GameWindow(width, height) {
     }
 
     function loadImages(imageFiles) {
-        const loader = new ImageLoader(imageFiles);
-        loader.load().then(
-            (names) => {
-                images = Object.assign(images, loader.images);
-                self.isImagesLoaded = true;
-                console.log("loaded:", images, self.isImagesLoaded);
-            }, (error) => {
-                console.log("error:", error);
-            });
+        Promise.all(
+            Object
+                .entries(imageFiles)
+                .map( ([key, value]) =>
+                    ImageLoader(value).then((img) => images[key] = img)
+                )
+        ).then( () => this.isImagesLoaded = true)
+
     }
 
     function printText(x, y, text) {
