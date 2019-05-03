@@ -1,9 +1,9 @@
-import GameWindow from "./game_window"
-import Loading from "./scenes/loading"
-import Menu from "./scenes/menu"
-import Scene from "./scene";
-import ControlState from "./control_state";
-import GameLevel from "./scenes/game_level";
+import GameWindow from "./GameWindow"
+import Loading from "./scenes/Loading"
+import Menu from "./scenes/Menu"
+import Scene from "./Scene";
+import ControlState from "./ControlState";
+import GameLevel from "./scenes/GameLevel";
 
 class Game {
     constructor({ width = 900, height = 900 } = {}) {

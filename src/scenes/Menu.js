@@ -1,4 +1,4 @@
-import Scene from "../scene";
+import Scene from "../Scene";
 
 export default class Menu extends Scene {
     constructor(game) {
