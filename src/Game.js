@@ -9,7 +9,7 @@ class Game {
     constructor({ width = 900, height = 900 } = {}) {
         this.gameWindow = new GameWindow(width, height);
         this.gameWindow.loadImages({
-            tanks: "../img/tanks.png",
+            tank: "../img/tank_animations.png",
             tiles: "../img/tiles.png",
             title: "../img/title.png"
         });
@@ -40,6 +40,7 @@ class Game {
             this.currentScene.init();
         }
         this.currentScene.render(time);
+        this.currentScene.update(time);
         requestAnimationFrame(this.frame.bind(this));
     }
 

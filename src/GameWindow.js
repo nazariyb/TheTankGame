@@ -56,14 +56,14 @@ function GameWindow(width, height) {
 
         });
         images[name] = mapImage;
-        return new TileMap({
-            imageName: name,
-            sourceX: 0,
-            sourceY: 0,
-            width: mapImage.width,
-            height: mapImage.height,
-            hitBoxes: hitBoxes
-        })
+        return new TileMap(
+            name,
+            0,
+            0,
+            mapImage.width,
+            mapImage.height,
+            hitBoxes
+        )
     }
     
     function fill(color) {
@@ -93,6 +93,7 @@ function GameWindow(width, height) {
     }
 
     function drawTile(tile) {
+        // console.log('Tile is', tile);
         context.drawImage(
             images[tile.imageName], tile.sourceX, tile.sourceY,
             tile.width, tile.height, tile.x, tile.y, tile.width, tile.height);

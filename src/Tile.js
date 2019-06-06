@@ -1,5 +1,5 @@
-function Tile({imageName, sourceX, sourceY, width=35, height=35}) {
-
+function Tile(imageName, sourceX, sourceY, width=35, height=35) {
+    console.log('got image size:', width, height);
     this.imageName = imageName;
     this.sourceX = sourceX;
     this.sourceY = sourceY;

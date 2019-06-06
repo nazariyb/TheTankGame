@@ -14,7 +14,7 @@ export default class Loading extends Scene {
         if (this.loadedAt === 0 && this.game.gameWindow.isImagesLoaded === true) {
             this.loadedAt = time;
         }
-        if (this.loadedAt !== 0 && (time - this.loadedAt) > 1000) {
+        if (this.loadedAt !== 0 && (time - this.loadedAt) > 500) {
             this.finish(Scene.LOADED);
         }
     }

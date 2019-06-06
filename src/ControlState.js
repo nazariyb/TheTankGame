@@ -1,4 +1,4 @@
-export default function ControlState() {
+function ControlState() {
     let states = {
         up: false,
         down: false,
@@ -16,6 +16,7 @@ export default function ControlState() {
 
     Object.defineProperty(this, "state", {
         get: function () {
+            // console.log('current state:', getCurrentState());
             return getCurrentState();
         }
     });
@@ -34,3 +35,5 @@ export default function ControlState() {
         }
     }
 }
+
+export default ControlState;

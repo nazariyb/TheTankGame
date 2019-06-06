@@ -1,4 +1,4 @@
-export default class Scene {
+class Scene {
     constructor(game) {
         this.game = game;
         this.status = this.constructor.WORKING;
@@ -23,3 +23,5 @@ export default class Scene {
         
     }
 }
+
+export default Scene;
