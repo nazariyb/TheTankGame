@@ -6,6 +6,7 @@ class Player extends PlayerBody {
         console.log('control is', control);
         this.control = control;
         document.addEventListener('keydown', () => this.update(new Date().getTime()));
+        document.addEventListener('keyup', () => this.lastTime = 0);
     }
 
     update(time) {

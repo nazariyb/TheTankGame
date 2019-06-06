@@ -4,7 +4,9 @@ function AnimationFactory(imageName) {
     console.log('AnimeFactory:', imageName);
     TileFactory.apply(this, [imageName,
                             350,
-                            840]);
+                            840,
+                            70,
+                            70]);
     this.getSequences = getSequences;
     this.sequences = this.getSequences();
 

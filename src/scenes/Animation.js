@@ -1,6 +1,6 @@
 import Tile from "../Tile"
 
-function Animation(imageName, frames, speed, repeat=true, autorun=true, width=70, height=70) {
+function Animation(imageName, frames, speed, repeat=false, autorun=true, width=70, height=70) {
     // console.log('HERE:', imageName);
     Tile.apply(this, [imageName,
                         frames[0].sx,
@@ -51,7 +51,7 @@ function Animation(imageName, frames, speed, repeat=true, autorun=true, width=70
             this.lastTime = time;
             return;
         }
-        if ((time - this.lastTime) > this.speed) {
+        if ((time - this.lastTime) > this.speed / 2) {
             this.nextFrame();
             this.lastTime = time;
         }
